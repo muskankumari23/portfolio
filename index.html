@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Website</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">Portfolio</div>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-left">
+      <!-- <p class="tag">Seagreen Theme • One Page Portfolio</p> -->
+      <h1>Hi, I’m <span class="highlight">Muskan kumari </span></h1>
+      <h2 class="sub">Department: <span class="dept">Computer Science & Engineering</span></h2>
+
+      <p class="desc">
+        I am a student and aspiring full-stack developer. I build projects using HTML, CSS, JavaScript and enjoy solving DSA problems.
+      </p>
+
+      <div class="hero-buttons">
+        <a class="btn" href="#projects">View Projects</a>
+        <a class="btn btn-outline" href="https://github.com/muskankumari23/muskankumari23.github.io" target="_blank">View All Projects</a>
+        <a class="btn btn-outline" href="#contact">Contact Me</a>
+      </div>
+
+      <div class="mini">
+        <div class="mini-box">
+          <span class="mini-title">Email</span>
+          <span class="mini-text">muskankumari92084@gmail.com</span>
+        </div>
+        <div class="mini-box">
+          <span class="mini-title">Location</span>
+          <span class="mini-text">India</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="img-ring">
+        <img src="profile.jpg" alt="Profile Photo" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <h3 class="section-title">About Me</h3>
+    <p class="section-text">
+      I’m a B.Tech CSE student passionate about web development and building practical projects.
+      I love learning new technologies and improving my problem-solving skills.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <h3 class="section-title">Skills</h3>
+    <div class="chips">
+      <span class="chip">HTML</span>
+      <span class="chip">CSS</span>
+      <span class="chip">JavaScript</span>
+      <span class="chip">C</span>
+      <span class="chip">C++</span>
+      <span class="chip">Python</span>
+      <span class="chip">DSA</span>
+      <span class="chip">Git & GitHub</span>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <h3 class="section-title">Projects</h3>
+    <div class="project-grid">
+      <div class="card">
+        <h4>Smart Budget Planner</h4>
+        <p>Budget-based selection system using the 0/1 Knapsack algorithm.</p>
+        <div class="card-links">
+          <a class="btn" href="http://127.0.0.1:5501/Smart_Budget_Planner/planner.html" target="_blank">Live Demo</a>
+          <a class="btn" href="https://github.com/muskankumari23/muskankumari23.github.io" target="_blank">GitHub</a>
+        </div>
+      </div>
+      <div class="card">
+        <h4>Amazon Clone</h4>
+        <p>Frontend UI clone using HTML & CSS with responsive layout.</p>
+        <div class="card-links">
+          <a class="btn" href="#" target="_blank">Live Demo</a>
+          <a class="btn" href="#" target="_blank">GitHub</a>
+        </div>
+      </div>
+      <div class="card">
+        <h4>Weather App</h4>
+        <p>A responsive weather application using HTML, CSS, and JavaScript with API integration.</p>
+        <div class="card-links">
+          <a class="btn" href="#" target="_blank">Live Demo</a>
+          <a class="btn" href="#" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <h3 class="section-title">+91 -------------</h3>
+
+    <div class="contact-box">
+      <p><b>Name:</b> Muskan kumari</p>
+      <p><b>Email:</b> muskankumari92084@gmail.com</p>
+      <p><b>LinkedIn:</b> <a href="#" target="_blank">https://www.linkedin.com/in/muskank23/</a></p>
+      <p><b>GitHub:</b> <a href="#" target="_blank">https://github.com/muskankumari23</a></p>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section class="section" id="certifications">
+    <h3 class="section-title">Certifications</h3>
+    <div class="cert-grid">
+      <!-- Example Card -->
+      <div class="cert-card">
+        <h4>Example Certificate</h4>
+        <p>Issuer • Jan 2023</p>
+        <button class="btn view-cert" data-url="certificates/example.pdf">View Certificate</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <iframe id="modal-frame" src="" frameborder="0" style="width:100%;height:80vh;"></iframe>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="social-links">
+      <a href="https://github.com/muskankumari23" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/muskank23/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:muskankumari92084@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p>© <span id="year"></span> Muskan kumari • Portfolio Website</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
