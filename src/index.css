@@ -8,25 +8,25 @@
   }
   
   body {
-    @apply bg-slate-900 text-slate-100 font-sans antialiased overflow-x-hidden w-full m-0 p-0;
+    @apply bg-[#050b14] text-white font-sans antialiased overflow-x-hidden w-full m-0 p-0;
   }
 }
 
 @layer components {
   .glass-nav {
-    @apply bg-slate-900/70 backdrop-blur-md border-b border-white/10;
+    @apply bg-[#050b14]/90 backdrop-blur-md border-b border-white/5;
   }
   
   .glass-card {
-    @apply bg-slate-800/40 backdrop-blur-lg border border-white/10 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] transition-all hover:border-teal-500/50 hover:shadow-[0_0_20px_rgba(20,184,166,0.3)];
+    @apply bg-[#0c1626] border border-teal-500/10 rounded-2xl transition-all hover:bg-[#111e33] hover:border-teal-400/30;
   }
   
   .btn-primary {
-    @apply relative overflow-hidden bg-gradient-to-r from-teal-500 to-sky-500 text-white font-medium py-3 px-8 rounded-full shadow-[0_0_15px_rgba(20,184,166,0.5)] transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(20,184,166,0.8)] focus:outline-none focus:ring-2 focus:ring-teal-400;
+    @apply relative overflow-hidden bg-gradient-to-r from-teal-500 to-sky-500 text-white font-medium py-3 px-8 rounded-full transition-all hover:shadow-[0_0_20px_rgba(20,184,166,0.4)] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-teal-400;
   }
 
   .btn-outline {
-    @apply relative border-2 border-teal-500 text-teal-400 font-medium py-3 px-8 rounded-full transition-all hover:bg-teal-500/10 hover:shadow-[0_0_15px_rgba(20,184,166,0.3)] focus:outline-none focus:ring-2 focus:ring-teal-400;
+    @apply relative border border-teal-500 text-teal-400 font-medium py-3 px-8 rounded-full transition-all hover:bg-teal-500/10 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] focus:outline-none focus:ring-2 focus:ring-teal-400;
   }
   
   .gradient-text {
@@ -34,40 +34,17 @@
   }
 }
 
-
-
-/* Neon Glow Effect */
-.glow-effect {
-  position: relative;
-}
-
-.glow-effect::before {
-  content: '';
-  position: absolute;
-  top: -2px; left: -2px; right: -2px; bottom: -2px;
-  background: linear-gradient(45deg, #14b8a6, #0ea5e9, #3b82f6);
-  z-index: -1;
-  filter: blur(10px);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  border-radius: inherit;
-}
-
-.glow-effect:hover::before {
-  opacity: 1;
-}
-
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: #050b14;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #112240;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #14b8a6;
 }

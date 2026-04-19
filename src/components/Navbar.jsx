@@ -20,31 +20,32 @@ const Navbar = () => {
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Experience', href: '#experience' },
+    { name: 'Certifications', href: '#certifications' },
     { name: 'Contact', href: '#contact' },
   ];
 
   return (
     <header 
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'glass-nav py-3' : 'bg-transparent py-5'
+        scrolled ? 'bg-[#050b14]/90 backdrop-blur-md border-b border-white/5 py-3' : 'bg-transparent py-5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-2xl font-bold tracking-tighter"
+            className="text-xl font-medium tracking-tight"
           >
-            <a href="#home" className="flex items-center gap-2">
-              <span className="text-teal-400">&lt;</span>
-              <span className="text-white">Muskan</span>
-              <span className="text-sky-400">/&gt;</span>
+            <a href="#home" className="flex items-center gap-1 group">
+              <span className="text-teal-400 opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0">&lt;</span>
+              <span className="text-white group-hover:gradient-text transition-all">Muskan</span>
+              <span className="text-sky-400 opacity-0 group-hover:opacity-100 transition-opacity translate-x-2 group-hover:translate-x-0">/&gt;</span>
             </a>
           </motion.div>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-6">
             {navLinks.map((link, index) => (
               <motion.a
                 key={link.name}
@@ -52,7 +53,7 @@ const Navbar = () => {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="text-slate-300 hover:text-teal-400 transition-colors text-sm uppercase tracking-wider font-medium"
+                className="text-neutral-400 hover:text-teal-400 transition-colors text-sm font-medium"
               >
                 {link.name}
               </motion.a>
@@ -63,9 +64,9 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-300 hover:text-white focus:outline-none"
+              className="text-neutral-400 hover:text-teal-400 focus:outline-none transition-colors"
             >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
@@ -78,15 +79,15 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass-nav border-t border-white/10"
+            className="md:hidden bg-[#050b14] border-t border-white/5"
           >
-            <div className="px-4 pt-2 pb-6 space-y-2">
+            <div className="px-4 pt-2 pb-6 space-y-1">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block px-3 py-3 text-base font-medium text-slate-300 hover:text-teal-400 hover:bg-white/5 rounded-md transition-colors"
+                  className="block px-3 py-3 text-sm font-medium text-neutral-400 hover:text-teal-400 hover:bg-white/5 rounded transition-colors"
                 >
                   {link.name}
                 </a>
