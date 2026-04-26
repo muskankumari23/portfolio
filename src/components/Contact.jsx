@@ -11,26 +11,27 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
     
-    // Create form data
     const formData = new FormData(e.target);
-    
-    // NOTE: You need to replace this key with your own from https://web3forms.com/
-    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+    const formProps = Object.fromEntries(formData);
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("https://formsubmit.co/ajax/muskankumari92084@gmail.com", {
         method: "POST",
-        body: formData
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formProps)
       });
       const data = await res.json();
 
-      if (data.success) {
+      if (data.success === "true" || data.success === true) {
         setSuccess(true);
         if(formRef.current) formRef.current.reset();
         setTimeout(() => setSuccess(false), 5000);
       } else {
         console.error("Form error", data);
-        alert("Something went wrong. Please check your access key.");
+        alert("Something went wrong. Please try again.");
       }
     } catch (error) {
       console.error("Fetch error:", error);
