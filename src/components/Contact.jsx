@@ -1,46 +1,8 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Github, Linkedin, Send } from 'lucide-react';
 
 const Contact = () => {
-  const formRef = useRef();
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    
-    const formData = new FormData(e.target);
-    const formProps = Object.fromEntries(formData);
-
-    try {
-      const res = await fetch("https://formsubmit.co/ajax/muskankumari92084@gmail.com", {
-        method: "POST",
-        headers: { 
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(formProps)
-      });
-      const data = await res.json();
-
-      if (data.success === "true" || data.success === true) {
-        setSuccess(true);
-        if(formRef.current) formRef.current.reset();
-        setTimeout(() => setSuccess(false), 5000);
-      } else {
-        console.error("Form error", data);
-        alert("Something went wrong. Please try again.");
-      }
-    } catch (error) {
-      console.error("Fetch error:", error);
-      alert("Network error. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
     <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 relative border-t border-teal-500/10">
       <div className="max-w-4xl mx-auto">
@@ -109,7 +71,7 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="glass-card p-8"
           >
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+            <form action="https://formsubmit.co/muskankumari92084@gmail.com" method="POST" className="space-y-6">
               <input type="hidden" name="subject" value="New Submission from Portfolio" />
               <div>
                 <label htmlFor="name" className="text-sm font-medium text-slate-300 mb-1 block">Your Name</label>
@@ -144,27 +106,14 @@ const Contact = () => {
                   placeholder="How can I help you?"
                 ></textarea>
               </div>
-              
+
               <button 
                 type="submit" 
-                disabled={loading}
-                className="w-full btn-primary flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full btn-primary flex items-center justify-center gap-2 group"
               >
-                {loading ? (
-                   <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                ) : (
-                  <>
-                    Send Message
-                    <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                  </>
-                )}
+                Send Message
+                <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </button>
-
-              {success && (
-                <div className="mt-4 p-3 bg-teal-500/10 border border-teal-500/30 text-teal-400 rounded-lg text-center text-sm font-medium">
-                  Message sent successfully!
-                </div>
-              )}
             </form>
           </motion.div>
         </div>
